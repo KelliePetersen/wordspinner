@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  background-color: beige;
+  font-family: sans-serif;
 }
 p {
   display: inline;
@@ -7,5 +9,6 @@ p {
 textarea {
   display: block;
   width: 500px;
+  max-width: 100%;
   margin: 10px auto;
 }
