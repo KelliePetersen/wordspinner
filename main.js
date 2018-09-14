@@ -1,24 +1,28 @@
-const wordLength = document.getElementById("word-length");
-const userInput = document.getElementById("input");
-const result = document.getElementById("result");
-const submit = document.getElementById("submit");
+window.onload = function() {
 
-submit.addEventListener("click", output);
-addWordLength();
+  const wordLength = document.getElementById("word-length");
+  const userInput = document.getElementById("input");
+  const result = document.getElementById("result");
+  const submit = document.getElementById("submit");  
+  
+  submit.addEventListener("click", output);
+  addWordLength();
 
-function addWordLength() {
-  let newOption, newValue;
-  for (let i = 1; i <= 20; i++) {
-    newOption = document.createElement("option");
-    newOption.text = i;
-    wordLength.add(newOption);
+  function addWordLength() {
+    let newOption, newValue;
+    for (let i = 1; i <= 20; i++) {
+      newOption = document.createElement("option");
+      newOption.text = i;
+      wordLength.add(newOption);
+    }
   }
-}
 
-function spin(words) {
-  return words.replace(new RegExp('\\w{' + wordLength.value + ',}', 'g'), (w) => w.split('').reverse().join(''));
-}
+  function spin(words) {
+    return words.replace(new RegExp('\\w{' + wordLength.value + ',}', 'g'), (w) => w.split('').reverse().join(''));
+  }
 
-function output() {
-  result.value = spin(userInput.value);
-}
+  function output() {
+    result.value = spin(userInput.value);
+  }
+
+};
